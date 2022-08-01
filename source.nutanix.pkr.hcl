@@ -17,7 +17,8 @@ source "nutanix" "centos" {
     subnet_name       = var.nutanix_subnet
   }
   
-  image_name        ="centos-{{isotime `Jan-_2-15:04:05`}}"
+  //image_name        ="centos-{{isotime `Jan-_2-15:04:05`}}"
+  image_name        ="packer-centos"
   user_data         = "I2Nsb3VkLWNvbmZpZwp1c2VyczoKICAtIG5hbWU6IGNlbnRvcwogICAgc3VkbzogWydBTEw9KEFMTCkgTk9QQVNTV0Q6QUxMJ10KY2hwYXNzd2Q6CiAgbGlzdDogfAogICAgY2VudG9zOnBhY2tlcgogIGV4cGlyZTogRmFsc2UKc3NoX3B3YXV0aDogVHJ1ZQ=="
 
   shutdown_command  = "echo 'packer' | sudo -S shutdown -P now"
@@ -89,9 +90,9 @@ source "nutanix" "windows" {
   cd_files         = ["scripts/gui/autounattend.xml","scripts/win-update.ps1"]
   
   image_name        ="win-{{isotime `Jan-_2-15:04:05`}}"
-  shutdown_command  = "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\""
-  shutdown_timeout  = "3m"
-  cpu               = 2
+  shutdown_command  = "c:/windows/system32/sysprep/sysprep.exe /generalize /oobe /shutdown"
+  shutdown_timeout  = "13m"
+  cpu               = 4
   os_type           = "Windows"
   memory_mb         = "8192"
   communicator      = "winrm"
