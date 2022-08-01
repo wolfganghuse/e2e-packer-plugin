@@ -67,6 +67,8 @@ source "nutanix" "windows" {
   nutanix_insecure = var.nutanix_insecure
   cluster_name     = var.nutanix_cluster
   
+  boot_type = "uefi"
+  
   vm_disks {
       image_type = "ISO_IMAGE"
       source_image_name = var.windows_2016_iso_image_name
