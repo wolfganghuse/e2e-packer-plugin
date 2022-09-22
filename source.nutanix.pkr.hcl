@@ -6,6 +6,7 @@ source "nutanix" "centos" {
   nutanix_insecure = var.nutanix_insecure
   cluster_name     = var.nutanix_cluster
   os_type          = "Linux"
+  force_deregister = true
   
   vm_disks {
       image_type = "DISK_IMAGE"
