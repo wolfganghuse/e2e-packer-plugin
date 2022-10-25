@@ -71,7 +71,7 @@ source "nutanix" "windows" {
   
   vm_disks {
       image_type = "ISO_IMAGE"
-      source_image_name = var.windows_2016_iso_image_name
+      source_image_name = var.windows_2019_iso_image_name
   }
 
   vm_disks {
@@ -99,6 +99,7 @@ source "nutanix" "windows" {
   communicator      = "winrm"
   winrm_port        = 5986
   winrm_insecure    = true
+  winrm_use_ntlm    = true
   winrm_use_ssl     = true
   winrm_timeout     = "45m"
   winrm_password    = "packer"

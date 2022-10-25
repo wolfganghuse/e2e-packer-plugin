@@ -153,12 +153,6 @@
                <Order>4</Order>
                <RequiresUserInput>true</RequiresUserInput>
             </SynchronousCommand>
-            <SynchronousCommand wcm:action="add">
-               <CommandLine>%SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe -Command Set-Item WSMan:\localhost\Service\Auth\Basic -Value $true</CommandLine>
-               <Description>Enable Basic authentication</Description>
-               <Order>5</Order>
-               <RequiresUserInput>true</RequiresUserInput>
-            </SynchronousCommand>
          </FirstLogonCommands>
          <OOBE>
             <HideEULAPage>true</HideEULAPage>
