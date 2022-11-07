@@ -90,7 +90,7 @@ source "nutanix" "windows" {
   
   cd_files         = ["scripts/gui/autounattend.xml","scripts/win-update.ps1"]
   
-  image_name        ="win-{{isotime `Jan-_2-15:04:05`}}"
+  image_name        ="win-2022e2e"
   shutdown_command  = "c:/windows/system32/sysprep/sysprep.exe /generalize /oobe /shutdown"
   shutdown_timeout  = "13m"
   cpu               = 4
